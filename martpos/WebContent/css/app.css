@@ -1,0 +1,424 @@
+
+@font-face { font-family: 'yg-jalnan'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+
+:root {
+    --color-primary: #ff6978;
+    --color-secondary: #fffcf9;
+    --color-secondary-plus: #f3f0ed;
+    --color-tertiary: #6d435aff;
+    --color-quaternary: #b1ede8ff;
+    --color-background: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size:13px;
+}
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;   
+    width: 100%;
+    font-family: 'yg-jalnan';
+}
+body {
+    background-color: #f5f5f5;
+
+}
+
+/* 버튼 */
+
+.btn-txt{
+    border: 1px solid transparent;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-txt {
+    font-family: 'yg-jalnan' !important;
+    border-radius: 1rem;
+    background-color: #ff6978;
+    margin-right:15px;
+    color: white;
+    padding: 0.33rem 1rem;
+    font: 1.5rem bold;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-txt:hover{ 
+    opacity: 0.8;
+}
+
+.btn-txt:active{
+    border: 1px solid rgba(96, 117, 185, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(151, 143, 23, 0.8);
+    outline: 0 none;
+}
+
+
+input {
+    font-size: 1rem;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    border : 1px solid #ced4da;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="button"]{
+    margin-left: auto;
+}
+
+input:active{
+   border-color: #b1ede8;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(156, 69, 78, 0.8);
+   
+}
+/**
+    커스텀 alert 팝업
+*/
+.fade {
+    display: none !important;
+}
+
+.alert {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    top: 20%;
+    left:calc((100% - 500px) / 2);
+    background: #fffcf9;
+    box-shadow: rgba(60, 64, 67, 0.15) 0px 2px 5px 2px;
+    border-width: 2px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    border-radius: 30px;
+    overflow:hidden;
+    z-index: 1010;
+}
+
+.alert-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px 0 10px 0 ;
+    background: #b1ede8ff;
+}
+
+
+.alert-header .notice-icon{
+    width: 45px;
+    height: 45px;
+    margin:0 0 0 15px;
+}
+
+.alert-header > h2 {
+    display: inline-block;
+    margin:0 0 0 15px;
+}
+
+.alert-header > .btn-txt {
+    height: 48px
+}
+
+.alert-body {
+    margin-top: 15px;
+}
+
+body.alert-open .container{
+    -webkit-filter: blur(1px);  
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+.alert-open:before{
+    content:"";
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%; height: 100%;
+    background-color:rgb(72,72,72,0.7);
+    z-index:1001;
+}
+.alert-body {
+    font-size: 25px;
+}
+
+/**
+    로그인 화면
+*/
+.login-card {
+    position: absolute;
+    top: calc((100% - 300px) / 2);
+    left: calc((100% - 500px) / 2);
+    display: inline-flex;
+    flex-direction: column;
+    background: #fffcf9;
+    box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-width: 2px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    border-radius: 30px;
+    overflow:hidden;
+    margin: auto;   
+}
+
+.login-card__title {
+    border-bottom: 1px solid rgba(00, 00, 00, 0.1);
+    padding: 20px 0;
+    margin:0px;
+    background-color: #ff6978;
+    color: #ffffff;
+}
+
+.login-card__body{
+    display:flex;
+    width: 100%;
+    padding-top: 40px;
+    margin: 0;
+    height: 50%;
+    align-items: center;
+
+}
+
+.login-card__button{
+    margin-left: auto;
+}
+
+.login-card__auth {
+    display: flex;
+    flex-flow: column;
+    width: 360px;
+    margin-left: 15px;
+    height:70px;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}
+.login-card__auth > *{ 
+    display: flex;
+    justify-content: space-between;
+}
+.login-card__auth label {
+    color: #6d435a;
+}
+
+.login-card__button {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    font-family: 'yg-jalnan';
+    background-color: #ff6978;
+}
+/**
+    POS MAIN 화면
+*/
+.root {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pos {
+
+    box-shadow: rgba(60, 64, 67, 0.15) 2px 3px 5px 1px;
+    border-radius: 30px;
+    background: var(--color-secondary);
+
+}
+
+.pos__wrapper {
+    margin: 1rem;
+}
+.pos__header {
+    background:var(--color-primary);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    border: 1px solid #ced4da;
+
+}
+.pos__title > h4 {
+    margin:0;
+    padding: 0;
+    font-size: 2rem;
+    text-align:center;
+    padding: 2rem 0 0 0;
+    letter-spacing: 0.5rem;
+    font-style: italic;
+}
+
+.pos__title > h2 {
+    margin:0;
+    padding:0;
+    font-size: 4rem;
+    text-align:center;
+    margin: 0 2rem;
+    line-height: 4.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.pos__log {
+    display:flex;
+    width:100%;
+    font-family: "돋움";
+    color: #b5babe;
+}
+.pos__log *{
+    font-size: 1rem;
+    padding: 0.2rem;
+    
+}
+
+.pos__log__title:nth-child(1) {
+    border-radius:  1rem 0 0 1rem;
+    margin-left: auto;
+}
+
+.pos__log__body{
+    font-style:italic;
+    background: var(--color-secondary);
+    margin-right: 1rem;
+}
+.pos__log__body:nth-child(4){
+    border-radius: 0 1rem 1rem 0;
+}
+
+.pos__body {
+    font-size: 1.5rem;
+}
+
+.pos__gocode {
+    margin-top: 2rem;
+    display: flex;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 1rem;
+
+
+}
+.pos__gocode > * {
+    padding: 0.5rem;
+}
+.pos__gocode__title {
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 1rem 0 0 1rem;    
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.pos__gocode__body {
+    background-color: var(--color-secondary);
+    border-radius: 0 1rem 1rem 0;
+    flex: 3;
+    font-size: 1.8rem;
+}
+
+.pos__ordercode {
+    display: inline-block;
+    margin-top: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.5) 0px 1px 1px 1px;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid var(--color-tertiary);
+    overflow: hidden;
+}
+
+.pos__ordercode > * {
+    padding: 0.5rem;
+}
+.pos__ordercode__title {
+    background-color: var(--color-quaternary);
+    border-radius: 1rem 0 0 0;    
+    flex: 1;
+}
+.pos__ordercode__body{
+    background-color: var(--color-secondary-plus);
+    border-radius: 0 1rem 0 0;
+}
+.pos__ordertable__header {
+    background-color: var(--color-quaternary);
+}
+
+.pos__ordertable {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 1rem;
+    text-align: center;
+    margin-top: 3rem;
+    background-color:var(--color-secondary);
+}
+.pos__ordertable tr:nth-child(odd){
+    background:var(--color-secondary-plus);    
+}
+
+.pos__ordertable__total {
+    background:var(--color-quaternary);
+    font-size: 2rem;
+}
+.pos__ordertable__value {
+    color: red;
+    font-size: 2rem;
+}
+
+.pos__ordertable * {
+    padding : 1rem;
+}
+
+.pos__usercode {
+    display: inline-block;
+    overflow:hidden;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #ced4da;
+}
+.pos__usercode * {
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.pos__usercode__title {
+    background:var(--color-quaternary);
+}
+.pos__usercode__body {
+    background:var(--color-secondary);
+
+}
+.pos__checkout {
+    width: 100%;
+    background: var(--color-primary);
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid #ced4da;
+    text-align: center;
+    font-size: 2rem;
+    outline: none;
+}
+
+.pos__checkout:hover{
+    opacity: 0.8;
+}
+
+.credit {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    color:var(--color-tertiary);
+    position: fixed;
+    bottom:0;
+    right:1rem;
+}
